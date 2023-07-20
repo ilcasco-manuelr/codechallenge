@@ -12,26 +12,33 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-const CardComponent = ({ image, name, rating, onFavsClick, onCardClick }) => {
+const CardComponent = ({
+  image,
+  name,
+  rating,
+  favorite,
+  onFavsClick,
+  onCardClick,
+}) => {
   return (
     <Grid item xs={1}>
       <Card>
         <CardActionArea onClick={onCardClick}>
           <CardMedia component="img" height="140" image={image} alt={name} />
-        <CardContent>
-          <Typography variant="body2" height={50} gutterBottom>
-            <b>{name}</b>
-          </Typography>
-        </CardContent>
+          <CardContent>
+            <Typography variant="body2" height={50} gutterBottom>
+              <b>{name}</b>
+            </Typography>
+          </CardContent>
         </CardActionArea>
         <Rating name="rating" value={rating / 2} precision={0.5} readOnly />
-        <CardActions >
+        <CardActions>
           <IconButton
             onClick={onFavsClick}
             aria-label="add to favorites"
             variant="outlined"
           >
-            <FavoriteIcon />
+            {favorite ? <FavoriteIcon color="primary" /> : <FavoriteIcon />}
           </IconButton>
         </CardActions>
       </Card>
