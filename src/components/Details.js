@@ -19,7 +19,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const DetailsComponent = ({ data, open, closeModalClick }) => {
   const serieData = data;
-	console.log(data)
   return (
     data && (
       <div>
