@@ -19,7 +19,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const DetailsComponent = ({ data, open, closeModalClick }) => {
   const serieData = data;
-
+	console.log(data)
   return (
     data && (
       <div>
@@ -47,7 +47,7 @@ const DetailsComponent = ({ data, open, closeModalClick }) => {
           <Grid container spacing={4}>
             <Grid item xs={6} md={4}>
               <img
-                src={serieData.image.original}
+                src={serieData.image.original ? serieData.image.original : "No_image"}
                 alt={serieData.name}
                 style={{ maxWidth: "100%" }}
               />
@@ -60,7 +60,7 @@ const DetailsComponent = ({ data, open, closeModalClick }) => {
               {serieData.externals.imdb ? (
                 <Grid item xs={6} md={4}>
                   <Typography variant="body2">
-                    IMDb:{" "}
+                    <strong>IMDb: </strong>{" "}
                     <Link
                       href={`https://www.imdb.com/title/${serieData.externals.imdb}`}
                       target="_blank"
@@ -73,21 +73,21 @@ const DetailsComponent = ({ data, open, closeModalClick }) => {
               ) : (
                 <Grid item xs={6} md={4}>
                   <Typography variant="body2">
-                    No se encuentra el IMDb
+                    No IMDb Found
                   </Typography>
                 </Grid>
               )}
               <br />
               <Grid item xs={6} md={3}>
                 <Typography variant="body2">
-                  Genres: {serieData.genres.join(", ")}
+								<strong> Genres:</strong> {serieData.genres.join(", ")}
                 </Typography>
               </Grid>
 
               <Grid item xs={12} md={3}>
                 <Typography variant="body2">
                   <br />
-                  Rating: {serieData.rating.average}/10
+                  <strong>Rating:</strong> {serieData.rating.average}/10
                   <Box component="span" sx={{ marginLeft: "8px" }}>
                     <Rating
                       name="rating"

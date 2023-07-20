@@ -27,7 +27,7 @@ const CardList = () => {
   const [typeAlert, setTypeAlert] = useState(false);
   const [addedFavName, setAddedFavName] = useState("");
   const [openModal, setOpenModal] = useState(false);
-  const [serieId, setSerieId] = useState([]);
+  const [serieId, setSerieId] = useState();
   const [favoritesData, setFavoritesData] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
