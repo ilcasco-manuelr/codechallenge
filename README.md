@@ -6,7 +6,7 @@ Demo to display TV Shows, and save a favorites ones.
 
 ## Installation
 
-**Step 1:** Install dependencies
+**Step 1:** Install dependencies on both projects root and server folder
 
 ```javascript
 npm i
